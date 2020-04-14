@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>  
+<constant name="struts.devMode" value="false" />
+<package name="default" extends="struts-default" namespace="/">  
+
+<action name="news" class="com.notifyme.actions.NewsDisplayAction">  
+<result name="success">jsp/LoginPage.jsp</result>
+<result name="error">/ErrorPage.jsp</result>
+</action>
+
+<!--  <action name="login" class="com.notifyme.actions.LoginAction">  
+<result name="success">jsp/LoginPage.jsp</result>
+<result name="error">/ErrorPage.jsp</result>
+</action> -->
+
+<action name="home" class="com.notifyme.actions.HomeLoadAction">  
+<result name="success">jsp/home.jsp</result>
+<result name="error">jsp/LoginPage.jsp</result>
+</action>
+
+<action name="contactUsAction" class="com.notifyme.actions.ContactUsAction">
+<result name="success">jsp/ContactUs.jsp</result>
+</action>
+
+<!-- <action name="signup" class="com.notifyme.actions.SignupAction">  
+<result name="success">jsp/SignupPage.jsp</result>
+<result name="error">/ErrorPage.jsp</result>
+</action> -->
+
+<action name="signupsave" class="com.notifyme.actions.SignupSaveDataAction">  
+<result name="success">jsp/SignupPage.jsp</result>
+<result name="error">/ErrorPage.jsp</result>
+</action>
+
+<action name="refreshDataAction" class="com.notifyme.actions.DataRefreshAction">
+<result name="success">jsp/content.jsp</result>
+</action>
+
+<action name="refreshMarketDataAction" class="com.notifyme.actions.MarketDataFeeder">
+<result name="success">jsp/MarketData.jsp</result>
+</action>
+
+<action name="homeLoad" class="com.notifyme.actions.NewsLoadAction">  
+<result name="success">jsp/Headlines.jsp</result>
+</action>
+
+<action name="primeNewsLoad" class="com.notifyme.actions.PrimeNewsAction">  
+<result name="success">jsp/Headlines.jsp</result>
+</action>
+
+
+<action name="primeNewsMore" class="com.notifyme.actions.PrimeNewsAction">  
+<result name="success">jsp/PrimeNewsMore.jsp</result>
+</action>
+
+<action name="sectorNewsLoad" class="com.notifyme.actions.SectorNewsLoadAction">  
+<result name="success">jsp/sectorNews_newapproach.jsp</result>
+</action>
+
+<action name="mostRecommended" class="com.notifyme.actions.MostRecommendedNewsAction">  
+<result name="success">jsp/MostRecommended.jsp</result>
+</action>
+
+
+<!-- Below action is to display news in list view -->
+<action name="sectorNewsListView" class="com.notifyme.actions.SectorNewsLoadAction">  
+<result name="success">jsp/sectorNewsListView.jsp</result>
+</action>
+
+<action name="intrntlnewsLoad" class="com.notifyme.actions.InternationalNewsLoadAction">  
+<result name="success">jsp/InternationalNews.jsp</result>
+</action>
+
+<action name="detailsPage" class="com.notifyme.actions.DetailsPageAction">  
+<result name="success">jsp/DetailsPage.jsp</result>
+<result name="error">jsp/LoginPage.jsp</result>
+</action> 
+
+<action name="commoditiesFeeds" class="com.notifyme.actions.CommoditiesFeedAction">  
+<result name="success">jsp/commoditiesFeeds.jsp</result>
+<result name="error">jsp/LoginPage.jsp</result>
+</action> 
+
+<action name="worldNewsFeeds" class="com.notifyme.actions.WorldNewsFeedAction">  
+<result name="success">jsp/worldNewsFeeds.jsp</result>
+<result name="error">jsp/LoginPage.jsp</result>
+</action> 
+
+<action name="currencyFeeds" class="com.notifyme.actions.CurrencyFeedAction">  
+<result name="success">jsp/currencyFeeds.jsp</result>
+<result name="error">jsp/LoginPage.jsp</result>
+</action> 
+
+<!-- below is for admin -->
+<action name="amadevil" class="com.notifyme.actions.admin.AdminLogin">  
+<result name="success">jsp/admin/AdminPortal.jsp</result>
+</action> 
+
+<action name="detailedNewsUpdate" class="com.notifyme.actions.admin.DetailedNewsUpdateAction">  
+<result name="success">jsp/admin/DetailedNewsUpdate.jsp</result>
+</action> 
+
+<!-- <action name="socialLogin" class="com.notifyme.actions.FacebookLoginAction">
+<result name="success">jsp/home.jsp</result>
+
+</action> -->
+
+
+ <!-- <action name="signupAction" class="com.notifyme.actions.SignUpAction">  
+ <result name="success">jsp/home.jsp</result>
+<result name="error">jsp/home.jsp</result>  -->
+<!-- <result type="json" />-->
+
+</package>  
+
+<package name="json" namespace="/" extends="json-default">
+   <action name="signupAction" class="com.notifyme.actions.SignUpAction" >
+      
+       <result type="json" />
+   </action>
+   
+   <action name="socialLogin" class="com.notifyme.actions.FacebookLoginAction" >
+      
+       <result type="json" />
+   </action>
+</package>
+
+
+  
+</struts>
